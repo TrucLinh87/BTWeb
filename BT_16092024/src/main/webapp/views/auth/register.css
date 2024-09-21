@@ -1,31 +1,30 @@
-@import "../main.css";
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #f7f9fc;
+    --input-border-color: #2980b9;
+    --input-focus-color: #27ae60;
+    --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e8f8f5; /* Lighter blue */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main {
-    background-color: #fff;
+    background-color: var(--background-color);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    transition: transform 0.2s;
-    width: 500px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
     animation: slideIn 0.5s ease-in-out;
 }
@@ -42,7 +41,8 @@
 }
 
 h3 {
-    color: #FF6347; /* Tomato */
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
 label {
@@ -51,10 +51,36 @@ label {
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: left;
-    color: #555;
+    color: var(--text-color);
     font-weight: bold;
 }
 
+.input-custom {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.input-custom:focus {
+    border-color: var(--input-focus-color);
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
 
 .wrap {
     display: flex;
@@ -62,3 +88,38 @@ label {
     align-items: center;
 }
 
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #27ae60; /* Darker green */
+}
+
+.text-success, .text-danger {
+    text-align: center;
+    margin: 10px 0;
+}
+
+p {
+    margin-top: 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9; /* Slightly darker shade */
+}

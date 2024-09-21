@@ -1,145 +1,126 @@
-@import "../main.css";
-
-/* Keyframes Animations */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes textFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Global Styles */
+/* General styles for the page */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e6f7ff;
     margin: 0;
-    flex-direction: column;
-    background: linear-gradient(135deg, #f3f3f3, #e2e2e2);
-    animation: fadeIn 1s ease-in-out;
+    padding: 0;
+    color: #333;
 }
 
-/* Main Container */
-.main {
+/* Styling for the login section */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the login form */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    padding: 20px 30px;
-    width: 500px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: slideIn 0.5s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
-/* Headings */
-h1 {
-    color: #FF6347; /* Tomato */
-    font-family: 'Century Gothic', ui-monospace;
+.container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styling */
+.login-header {
+    text-align: center;
     margin-bottom: 20px;
-    animation: textFadeIn 1s ease-in-out;
 }
 
-/* Wrapper */
-.wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 1s ease-in-out;
+h2 {
+    color: #0066cc;
+    font-weight: bold;
+    font-size: 1.8em;
 }
 
-/* Divider */
-.divider:after,
-.divider:before {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #eee;
+
+
+/* Avatar image styling */
+.avatar {
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Floating Labels */
-.form-label-floating {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-
-.form-label-floating input {
-    border-radius: 0.2rem;
-    border: 1px solid #ced4da;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
+/* Styling for input fields */
+input[type="text"],
+input[type="password"] {
     width: 100%;
-    text-align: center;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #007acc;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-.form-label-floating input:focus {
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #00b3b3;
+    outline: none;
 }
 
-.form-label-floating label {
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    font-size: 1rem;
-    color: #6c757d;
-    transition: all 0.2s ease-in-out;
-    pointer-events: none;
-    transform: translateY(-50%);
+/* Styling for buttons */
+.btn-custom {
+    background-color: #28a745;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
 }
 
-.form-label-floating input:focus ~ label,
-.form-label-floating input:not(:placeholder-shown) ~ label {
-    top: -0.5rem;
-    left: 1rem;
-    font-size: 0.75rem;
-    color: #495057;
-    transform: none;
+.btn-custom:hover {
+    background-color: #218838;
 }
 
-/* Centering text in the checkbox label */
+/* Form check styling */
 .form-check {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
 }
 
-.form-check-input {
-    margin-top: 0; /* Align checkbox with label */
+/* Password link styling */
+a {
+    color: #007acc;
+    text-decoration: none;
 }
 
-.form-check-label {
-    margin-left: 0.5rem;
+a:hover {
+    color: #005f99;
+    text-decoration: underline;
+}
+
+/* Success and alert message styling */
+.text-success, .text-danger {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Container for the registration link */
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Additional styling for the last container */
+.container:last-of-type {
+    background-color: #e9ecef;
+    border-radius: 0 0 15px 15px;
 }
